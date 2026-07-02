@@ -73,16 +73,16 @@
       <h3>Research question <span class="label-badge label-badge--required">Required</span></h3>
       <p>State your scientific question clearly. The AI uses this as the central criterion to evaluate each entity in your list. The more specific and hypothesis-driven your question, the more discriminating the results.</p>
       <p><strong>Good example:</strong> "Which of these genes are upregulated in KRAS-mutant colorectal cancer and correlate with poor overall survival?"</p>
-      <p><strong>Less useful:</strong> "Tell me about these genes." — too vague to produce meaningful ranking.</p>
+      <p><strong>Less useful:</strong> "Tell me about these genes", which is too vague to produce a meaningful ranking.</p>
 
       <h3>Entity type <span class="label-badge label-badge--required">Required</span></h3>
       <p>Select the category that best describes the items in your list. Options include:</p>
       <ul>
-        <li><strong>Gene</strong> — use HGNC-approved gene symbols (e.g. <code>TP53</code>, <code>EGFR</code>)</li>
-        <li><strong>Drug</strong> — use INN or common drug names (e.g. <code>imatinib</code>, <code>pembrolizumab</code>)</li>
-        <li><strong>Disease</strong> — use standard terminology (e.g. <code>non-small cell lung cancer</code>)</li>
-        <li><strong>Protein</strong> — use UniProt-style names or HGNC protein names</li>
-        <li><strong>Cell type</strong> — use Cell Ontology terms where possible</li>
+        <li><strong>Gene:</strong> use HGNC-approved gene symbols (e.g. <code>TP53</code>, <code>EGFR</code>)</li>
+        <li><strong>Drug:</strong> use INN or common drug names (e.g. <code>imatinib</code>, <code>pembrolizumab</code>)</li>
+        <li><strong>Disease:</strong> use standard terminology (e.g. <code>non-small cell lung cancer</code>)</li>
+        <li><strong>Protein:</strong> use UniProt-style names or HGNC protein names</li>
+        <li><strong>Cell type:</strong> use Cell Ontology terms where possible</li>
       </ul>
       <p>The entity type helps the AI interpret each list item in the correct biomedical context.</p>
 
@@ -90,7 +90,7 @@
       <p>Enter your entities as a comma-separated list directly in the text field, or upload a CSV or TSV file.</p>
 
       <h4>Manual entry</h4>
-      <p>Type or paste entities separated by commas: <code>TP53, BRCA1, EGFR, MYC, PTEN</code>. Spaces around commas are ignored.</p>
+      <p>Type or paste entities separated by commas, each followed by a space: <code>TP53, BRCA1, EGFR, MYC, PTEN</code>.</p>
 
       <h4>CSV/TSV upload</h4>
       <p>Upload a file where the <strong>first column</strong> contains your entity names. A column header is optional — if present, the first row is treated as a header and skipped. Additional columns are preserved and can be merged into your results later. UTF-8 encoding is required.</p>
@@ -132,12 +132,12 @@
       <h3>Results table</h3>
       <p>The results page shows an interactive table with one row per entity. Key columns include:</p>
       <ul>
-        <li><strong>Entity name</strong> — the gene symbol, drug name, or other identifier from your list.</li>
-        <li><strong>Effect score</strong> — a relevance score (typically 0–1) indicating how strongly the evidence supports a connection to your research question. Higher is more relevant.</li>
-        <li><strong>Novelty score</strong> — indicates how underexplored the entity is relative to your question. A high novelty score with a high effect score suggests a potentially interesting but understudied candidate.</li>
-        <li><strong>Precision / Recall</strong> — statistical confidence metrics for the AI's evidence retrieval.</li>
-        <li><strong>Answer / Evidence</strong> — a brief text summary of the evidence found for each entity.</li>
-        <li><strong>References</strong> — PubMed IDs (PMIDs) cited as evidence. Click any PMID to open the abstract directly on PubMed.</li>
+        <li><strong>Entity name:</strong> the gene symbol, drug name, or other identifier from your list.</li>
+        <li><strong>Effect score:</strong> a relevance score (typically 0–1) indicating how strongly the evidence supports a connection to your research question. Higher is more relevant.</li>
+        <li><strong>Novelty score:</strong> indicates how underexplored the entity is relative to your question. A high novelty score with a high effect score suggests a potentially interesting but understudied candidate.</li>
+        <li><strong>Precision / Recall:</strong> statistical confidence metrics for the AI's evidence retrieval.</li>
+        <li><strong>Answer / Evidence:</strong> a brief text summary of the evidence found for each entity.</li>
+        <li><strong>References:</strong> PubMed IDs (PMIDs) cited as evidence. Click any PMID to open the abstract directly on PubMed.</li>
       </ul>
       <p>Click any column header to sort the table. Use the search field to filter by entity name.</p>
 
