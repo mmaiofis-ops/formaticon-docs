@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Brand palette */
+  --color-brand-primary:   #D1145B;
+  --color-brand-secondary: #7F2373;
+  --color-brand-dark:      #1a0a24;
+  --color-brand-mid:       #cb165d;
+
+  /* Workflow accents */
+  --color-batch:   #E8650A;
+  --color-report:  #1565C0;
+  --color-agent:   #2E7D32;
+
+  /* Neutrals */
+  --color-bg:        #f5f5f5;
+  --color-surface:   #ffffff;
+  --color-border:    #e8e8e8;
+  --color-text:      #262626;
+  --color-text-soft: #595959;
+  --color-text-mute: #8c8c8c;
+
+  /* Sidebar */
+  --color-sidebar-bg:       #001529;
+  --color-sidebar-text:     #c8d4e0;
+  --color-sidebar-active:   #D1145B;
+  --color-sidebar-hover-bg: rgba(209, 20, 91, 0.15);
+  --color-sidebar-section:  #4a6070;
+
+  /* Layout */
+  --sidebar-width: 260px;
+  --topbar-height: 56px;
+  --content-max:   820px;
+
+  /* Typography */
+  --font-body: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Spacing */
+  --sp-xs:  4px;
+  --sp-sm:  8px;
+  --sp-md:  16px;
+  --sp-lg:  24px;
+  --sp-xl:  40px;
+  --sp-xxl: 64px;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 4px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+}

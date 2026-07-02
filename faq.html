@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Frequently asked questions about Formaticon — Batch Query, Detailed Report, Bioscientist Agent, results, downloads, and billing.">
+  <title>FAQ — Formaticon Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/formaticon-docs/css/vars.css">
+  <link rel="stylesheet" href="/formaticon-docs/css/layout.css">
+  <link rel="stylesheet" href="/formaticon-docs/css/components.css">
+</head>
+<body class="docs-body">
+
+<div id="nav-overlay" class="nav-overlay"></div>
+
+<header class="docs-topbar">
+  <button class="nav-hamburger" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <a class="topbar-logo" href="/formaticon-docs/index.html">
+    <img src="/formaticon-docs/img/logo.svg" alt="Formaticon logo" onerror="this.style.display='none'">
+    <span class="topbar-logo-text">FORMATICON</span>
+  </a>
+  <span class="topbar-tagline">User Documentation</span>
+  <a class="topbar-app-link" href="https://formaticon.cellformatica.com" target="_blank" rel="noopener">Open App ↗</a>
+</header>
+
+<div class="docs-shell">
+  <nav class="docs-sidebar" id="sidebar" aria-label="Documentation navigation">
+    <span class="sidebar-section-label">Getting Started</span>
+    <a class="sidebar-link" href="/formaticon-docs/index.html"><span class="link-icon">🏠</span> Overview</a>
+    <a class="sidebar-link" href="/formaticon-docs/getting-started.html"><span class="link-icon">🚀</span> Getting Started</a>
+    <span class="sidebar-section-label">Workflows</span>
+    <a class="sidebar-link" href="/formaticon-docs/batch-query.html"><span class="link-icon">🔬</span> Batch Query</a>
+    <a class="sidebar-link" href="/formaticon-docs/detailed-report.html"><span class="link-icon">📄</span> Detailed Report</a>
+    <a class="sidebar-link" href="/formaticon-docs/bioscientist-agent.html"><span class="link-icon">🤖</span> Bioscientist Agent</a>
+    <span class="sidebar-section-label">Reference</span>
+    <a class="sidebar-link" href="/formaticon-docs/reading-results.html"><span class="link-icon">📊</span> Reading Your Results</a>
+    <a class="sidebar-link" href="/formaticon-docs/history-sharing-billing.html"><span class="link-icon">🗂️</span> History, Sharing &amp; Billing</a>
+    <a class="sidebar-link" href="/formaticon-docs/faq.html"><span class="link-icon">❓</span> FAQ</a>
+  </nav>
+
+  <main class="docs-content">
+    <div class="docs-content-inner">
+
+      <div class="page-meta">
+        <h1>Frequently Asked Questions</h1>
+        <p class="subtitle">Common questions about all Formaticon workflows, results, and billing.</p>
+      </div>
+
+      <h2>General</h2>
+      <div class="faq-section">
+
+        <details>
+          <summary>What is Formaticon?</summary>
+          <div class="faq-answer">
+            <p>Formaticon is an AI-powered bioscience research platform developed by Cellformatica. It uses large language models (Claude by Anthropic) combined with systematic literature retrieval from PubMed and preprint servers to help researchers answer scientific questions at scale. Outputs range from ranked entity tables (Batch Query) to multi-section PDF white papers (Bioscientist Agent).</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What AI models does Formaticon use?</summary>
+          <div class="faq-answer">
+            <p>Formaticon primarily uses <strong>Claude by Anthropic</strong> for reasoning, literature synthesis, report writing, and hypothesis generation. The platform defaults to Anthropic's most capable available model. Power users can specify a model override in the Bioscientist Task advanced settings. Auxiliary operations (e.g. schematic diagram generation, document synthesis) may use Google Gemini when a Google API key is configured on the backend.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Is my data stored? Is it used to train AI models?</summary>
+          <div class="faq-answer">
+            <p>Your task inputs (research questions, gene lists, attachments) and outputs (reports, results) are stored on AWS infrastructure associated with your Formaticon account. This allows results to persist in your history pages and enables sharing. Formaticon does not use your research data to train AI models. For detailed privacy information, contact Cellformatica via the <a href="https://cellformatica.com" target="_blank" rel="noopener">Cellformatica website</a>.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I use Formaticon programmatically via an API?</summary>
+          <div class="faq-answer">
+            <p>Yes. Formaticon has a REST API. Your personal API key is available in your Profile page under Account Settings. Contact Cellformatica for API documentation and rate limit information.</p>
+          </div>
+        </details>
+
+      </div>
+
+      <h2>Batch Query</h2>
+      <div class="faq-section">
+
+        <details>
+          <summary>How many entities can I submit in a Batch Query?</summary>
+          <div class="faq-answer">
+            <p>There is no hard limit. However, lists of fewer than 100 entities produce the best results in terms of both speed and analytical depth. Very large lists (200+ entities) significantly increase processing time and cost. For large screening exercises, consider splitting into multiple queries or using a pre-filtering step first.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What CSV format does Batch Query accept?</summary>
+          <div class="faq-answer">
+            <p>The first column of the CSV must contain your entity names (gene symbols, drug names, etc.). A header row is optional — if present, the first row is treated as a header and skipped. Additional columns are preserved and can be merged into your results view. Use UTF-8 encoding and comma delimiters. Example:</p>
+            <pre style="background:#f0f0f0;padding:10px;border-radius:6px;font-size:0.83rem;overflow:auto;">gene,fold_change
+TP53,2.4
+EGFR,5.1
+KRAS,1.8</pre>
+          </div>
+        </details>
+
+        <details>
+          <summary>Why did the focusing terms not auto-generate?</summary>
+          <div class="faq-answer">
+            <p>Focusing term auto-generation requires the AI to call back to the platform. If the button produces no output, try refreshing the page and re-entering your research question before clicking again. If the problem persists, enter focusing terms manually — a few relevant keywords or MeSH terms from your domain of interest will work well.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>My results table is nearly empty — what happened?</summary>
+          <div class="faq-answer">
+            <p>Empty or near-empty results usually mean one of: (1) the entities in your list have very little published literature in the context of your question — normal for novel targets; (2) the entity names are non-standard (aliases, Ensembl IDs, or misspelled symbols) that the AI could not resolve; or (3) the focusing terms were too narrow and excluded relevant papers. Try broadening the question, using canonical gene symbols, or reducing the specificity of focusing terms.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I re-run a Batch Query with different parameters?</summary>
+          <div class="faq-answer">
+            <p>Yes. Go to <a href="https://formaticon.cellformatica.com/history-query" target="_blank" rel="noopener">Batch Query History</a>, find your previous run, and click <strong>Run Again</strong>. The form is pre-filled with all your previous inputs. You can change any field — question, entity list, focusing terms, scoring question — before resubmitting. Each re-run is billed separately.</p>
+          </div>
+        </details>
+
+      </div>
+
+      <h2>Detailed Report</h2>
+      <div class="faq-section">
+
+        <details>
+          <summary>How many genes should I include in a Detailed Report?</summary>
+          <div class="faq-answer">
+            <p>Fewer than approximately 30 genes. The report is optimised for focused, curated panels. For more than 30 genes, consider using <a href="/formaticon-docs/batch-query.html">Batch Query</a> first to rank and prioritise, then submit the top candidates as a Detailed Report for deeper narrative analysis.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How long does a Detailed Report take?</summary>
+          <div class="faq-answer">
+            <p>Typically 30 to 90 minutes, depending on gene list size, question complexity, and current system load. You do not need to keep the browser tab open — the report is stored and will appear in your history when complete.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I use protein names or Ensembl IDs instead of gene symbols?</summary>
+          <div class="faq-answer">
+            <p>Use HGNC-approved gene symbols where possible (e.g. <code>EGFR</code>, not <code>ERBB1</code> or <code>ENSG00000146648</code>). Gene symbols are unambiguous and maximise retrieval accuracy. UniProt protein names and common aliases may also work, but canonical HGNC symbols produce the most consistent results.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>The report does not cover all genes I submitted. Is that normal?</summary>
+          <div class="faq-answer">
+            <p>For very large gene lists, the report may group genes into functional clusters rather than treating each one individually. This is intentional — grouping by pathway or function produces a more coherent narrative than a long list of per-gene paragraphs. If you need per-gene coverage, submit a smaller, more focused list.</p>
+          </div>
+        </details>
+
+      </div>
+
+      <h2>Bioscientist Agent</h2>
+      <div class="faq-section">
+
+        <details>
+          <summary>How long does a Bioscientist Agent task take?</summary>
+          <div class="faq-answer">
+            <p>Typical runtime is <strong>1 to 2.5 hours</strong>. Complex, multi-part questions, requests for longer documents (5,000+ words), or tasks with large reference targets may extend this to 3–4 hours. The hard maximum is 8 hours. If your task exceeds 8 hours it will be marked FAILED and you can resubmit; failed runs are not charged.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I attach PDF papers or spreadsheets?</summary>
+          <div class="faq-answer">
+            <p>Yes. The Bioscientist Task form accepts PDF, CSV, TSV, and image files as attachments. PDFs are read and used as reference context — the agent can extract information from them and may cite them in the report. CSV/TSV files can be used as input data for quantitative analysis. There is no strict file size limit for a single file, but very large PDFs may slow down processing.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What model override should I use?</summary>
+          <div class="faq-answer">
+            <p>Leave the model override blank to use the platform's default (the most capable Claude model available). Only override the model if you have a specific reason — for example, if you are supplying your own API key and want to use a particular version. Valid values are Claude model IDs such as <code>claude-opus-4-8</code> or <code>claude-sonnet-4-6</code>. Using a less capable model to reduce cost will produce lower-quality research output.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>My task shows FAILED — what should I do?</summary>
+          <div class="faq-answer">
+            <p>First, download the <strong>session log</strong> from the task detail page. Open it in a text editor and search for <code>"error"</code> or <code>"FAIL"</code> to find the specific failure point. Common causes:</p>
+            <ul>
+              <li><strong>API timeout</strong> — a transient network issue. Simply resubmit the task; it is not charged.</li>
+              <li><strong>Invalid attachment</strong> — a corrupted or unreadable file. Try removing the attachment and resubmitting.</li>
+              <li><strong>Ambiguous or unsupported question</strong> — very short or non-scientific questions may fail the classification step. Rewrite with more detail.</li>
+            </ul>
+            <p>If you cannot diagnose the issue from the session log, contact Cellformatica support with the task ID and the error message from the log.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can the agent search for specific papers I know about?</summary>
+          <div class="faq-answer">
+            <p>Yes. In your task description, you can mention specific papers by author, year, journal, or DOI: "Include findings from Smith et al. 2022 (Nature, DOI: 10.1038/…)". The agent will search PubMed for those papers and incorporate them into the retrieval. Alternatively, attach the PDF of the paper directly as an input file.</p>
+          </div>
+        </details>
+
+      </div>
+
+      <h2>Results and downloads</h2>
+      <div class="faq-section">
+
+        <details>
+          <summary>I can't find my PDF — where is it?</summary>
+          <div class="faq-answer">
+            <p>The PDF is in the output archive, not downloaded automatically. Go to <a href="https://formaticon.cellformatica.com/history-bioscientist" target="_blank" rel="noopener">Bioscientist Task History</a> → click your task name → click <strong>Download Output</strong>. The archive is a <code>.tar.gz</code> file containing the PDF, DOCX, all figures, PRISMA files, hypotheses, and references. Extract it with any archive tool (Mac: double-click; Windows: use 7-Zip or WinRAR).</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>The session log is very long — what should I look at?</summary>
+          <div class="faq-answer">
+            <p>The session log is in JSONL format (one JSON object per line). For most users, the most relevant parts are: (1) near the beginning — the decomposed sub-questions, which show how the agent interpreted your task; (2) the search queries sent to PubMed; (3) near the end — any error messages or validation failures; (4) the final <code>done</code> event, which includes the total cost. You can open the file in VS Code or any text editor with JSON syntax highlighting for readability.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I re-run the same Bioscientist task?</summary>
+          <div class="faq-answer">
+            <p>Yes. Go to <a href="https://formaticon.cellformatica.com/history-bioscientist" target="_blank" rel="noopener">Bioscientist Task History</a>, find your task, and click <strong>Run Again</strong> (if available) or return to the <a href="https://formaticon.cellformatica.com/bioscientist-request" target="_blank" rel="noopener">task submission form</a> and re-enter your question. Every run starts fresh — Formaticon does not resume incomplete sessions. Re-running is useful to get a more up-to-date literature synthesis or to try a rephrased question.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Are my results accurate? Should I trust the citations?</summary>
+          <div class="faq-answer">
+            <p>Formaticon retrieves real papers from PubMed and preprint servers and uses their content as the basis for synthesis. Every citation in a Bioscientist Agent white paper is traceable to a specific PMID in the citation registry — the pipeline enforces this programmatically and will not render a report with unresolvable citations. That said, AI synthesis can make errors of emphasis or interpretation. Always verify key claims and novel hypotheses against the original primary literature before acting on them clinically or experimentally.</p>
+          </div>
+        </details>
+
+      </div>
+
+      <h2>Billing</h2>
+      <div class="faq-section">
+
+        <details>
+          <summary>When am I charged?</summary>
+          <div class="faq-answer">
+            <p>Credits are deducted only when a run reaches <span class="status-pill status-pill--success">SUCCESS</span> status. Submitting a task does not charge you, and failed runs are not charged. The amount charged is the actual compute cost, which may differ slightly from the estimate shown at submission time.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What does the NOT_ENOUGH_MONEY error mean?</summary>
+          <div class="faq-answer">
+            <p>Your current credit balance is lower than the estimated cost of the run you are trying to submit. The request is rejected before any processing begins. To resolve: go to <strong>Profile → Billing</strong>, add enough credits to cover the estimated cost (visible in the submission form), then resubmit. The estimate is shown in the confirmation modal before you click Confirm.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I get a refund?</summary>
+          <div class="faq-answer">
+            <p>Refunds are evaluated on a case-by-case basis. If you were charged for a run that produced clearly incorrect, incomplete, or nonsensical output, contact Cellformatica support via the <a href="https://cellformatica.com" target="_blank" rel="noopener">Cellformatica website</a> with your task ID and a description of the issue. Note that variation in quality between runs of the same question is inherent to AI-generated research and is not grounds for a refund.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Do credits expire?</summary>
+          <div class="faq-answer">
+            <p>Credit expiry policy is determined by Cellformatica. Contact support via the <a href="https://cellformatica.com" target="_blank" rel="noopener">Cellformatica website</a> for the current terms. In general, unused credits remain available for a reasonable period after purchase.</p>
+          </div>
+        </details>
+
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<footer class="docs-footer">
+  <p>© 2024 <a href="https://cellformatica.com" target="_blank" rel="noopener">Cellformatica</a> · <a href="https://formaticon.cellformatica.com" target="_blank" rel="noopener">Launch Formaticon</a></p>
+</footer>
+
+<script src="/formaticon-docs/js/nav.js"></script>
+</body>
+</html>

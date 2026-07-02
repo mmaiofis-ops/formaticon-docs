@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formaticon documentation — learn how to use the AI-powered bioscience research platform to run batch queries, generate detailed reports, and launch autonomous research agents.">
+  <title>Overview — Formaticon Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/formaticon-docs/css/vars.css">
+  <link rel="stylesheet" href="/formaticon-docs/css/layout.css">
+  <link rel="stylesheet" href="/formaticon-docs/css/components.css">
+</head>
+<body class="docs-body">
+
+<div id="nav-overlay" class="nav-overlay"></div>
+
+<header class="docs-topbar">
+  <button class="nav-hamburger" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <a class="topbar-logo" href="/formaticon-docs/index.html">
+    <img src="/formaticon-docs/img/logo.svg" alt="Formaticon logo" onerror="this.style.display='none'">
+    <span class="topbar-logo-text">FORMATICON</span>
+  </a>
+  <span class="topbar-tagline">User Documentation</span>
+  <a class="topbar-app-link" href="https://formaticon.cellformatica.com" target="_blank" rel="noopener">Open App ↗</a>
+</header>
+
+<div class="docs-shell">
+  <nav class="docs-sidebar" id="sidebar" aria-label="Documentation navigation">
+    <span class="sidebar-section-label">Getting Started</span>
+    <a class="sidebar-link" href="/formaticon-docs/index.html">
+      <span class="link-icon">🏠</span> Overview
+    </a>
+    <a class="sidebar-link" href="/formaticon-docs/getting-started.html">
+      <span class="link-icon">🚀</span> Getting Started
+    </a>
+    <span class="sidebar-section-label">Workflows</span>
+    <a class="sidebar-link" href="/formaticon-docs/batch-query.html">
+      <span class="link-icon">🔬</span> Batch Query
+    </a>
+    <a class="sidebar-link" href="/formaticon-docs/detailed-report.html">
+      <span class="link-icon">📄</span> Detailed Report
+    </a>
+    <a class="sidebar-link" href="/formaticon-docs/bioscientist-agent.html">
+      <span class="link-icon">🤖</span> Bioscientist Agent
+    </a>
+    <span class="sidebar-section-label">Reference</span>
+    <a class="sidebar-link" href="/formaticon-docs/reading-results.html">
+      <span class="link-icon">📊</span> Reading Your Results
+    </a>
+    <a class="sidebar-link" href="/formaticon-docs/history-sharing-billing.html">
+      <span class="link-icon">🗂️</span> History, Sharing &amp; Billing
+    </a>
+    <a class="sidebar-link" href="/formaticon-docs/faq.html">
+      <span class="link-icon">❓</span> FAQ
+    </a>
+  </nav>
+
+  <main class="docs-content">
+    <div class="docs-content-inner">
+
+      <div class="hero">
+        <h1>Formaticon Documentation</h1>
+        <p>Your complete guide to AI-powered bioscience research — from submitting your first query to interpreting publication-grade white papers.</p>
+      </div>
+
+      <h2>What is Formaticon?</h2>
+      <p>Formaticon is an AI-driven bioscience research platform developed by <a href="https://cellformatica.com" target="_blank" rel="noopener">Cellformatica</a>. It combines large language models with systematic literature retrieval, pathway analysis, and structured report generation to help researchers answer scientific questions at scale. Whether you need to screen hundreds of genes against a hypothesis, generate a multi-section analytical report, or commission a fully autonomous deep-research pipeline, Formaticon delivers publication-ready outputs — complete with figures, hypotheses, PRISMA-compliant search protocols, and formatted references.</p>
+
+      <h2>Three ways to do research</h2>
+      <div class="workflow-cards">
+        <a class="workflow-card workflow-card--batch" href="/formaticon-docs/batch-query.html">
+          <div class="card-icon">🔬</div>
+          <h3>Batch Query</h3>
+          <p>Screen a list of entities — genes, drugs, diseases, cell types — against a research question. Get an interactive ranked table and scatter plot.</p>
+          <div class="card-meta">Best for large entity lists</div>
+        </a>
+        <a class="workflow-card workflow-card--report" href="/formaticon-docs/detailed-report.html">
+          <div class="card-icon">📄</div>
+          <h3>Detailed Report</h3>
+          <p>Submit a focused gene list and research question. Receive a multi-section narrative report with regulatory network analysis, figures, and references.</p>
+          <div class="card-meta">Best for targeted gene sets</div>
+        </a>
+        <a class="workflow-card workflow-card--agent" href="/formaticon-docs/bioscientist-agent.html">
+          <div class="card-icon">🤖</div>
+          <h3>Bioscientist Agent</h3>
+          <p>Describe any open-ended research question or task. The autonomous pipeline searches, reasons, hypothesizes, and delivers a full PDF/DOCX white paper.</p>
+          <div class="card-meta">Best for deep research &amp; white papers</div>
+        </a>
+      </div>
+
+      <h2>Quick start</h2>
+      <ol class="steps">
+        <li>
+          <div class="step-content">
+            <strong>Create an account</strong>
+            Register at <a href="https://formaticon.cellformatica.com/register" target="_blank" rel="noopener">formaticon.cellformatica.com/register</a> with your name, email, phone, and a password. Then log in.
+          </div>
+        </li>
+        <li>
+          <div class="step-content">
+            <strong>Add credits</strong>
+            Each run consumes credits based on AI compute used. Go to your <strong>Profile</strong> page and follow the billing link to purchase credits via Stripe.
+          </div>
+        </li>
+        <li>
+          <div class="step-content">
+            <strong>Choose a workflow</strong>
+            Use the table below or the navigation to choose: Batch Query for entity screening, Detailed Report for a curated gene set, or Bioscientist Agent for open-ended deep research.
+          </div>
+        </li>
+        <li>
+          <div class="step-content">
+            <strong>Fill in the form and submit</strong>
+            Enter your research question and any required inputs (entity list, gene list, or a detailed task description). Review the cost estimate, then confirm.
+          </div>
+        </li>
+        <li>
+          <div class="step-content">
+            <strong>Wait for results</strong>
+            Batch Queries typically complete in a few minutes. Detailed Reports take 30–90 minutes. Bioscientist Agent tasks run for 1–2.5 hours. You can monitor status in real time.
+          </div>
+        </li>
+        <li>
+          <div class="step-content">
+            <strong>Download and share</strong>
+            View your results in the browser, download PDF and DOCX files, export CSVs, and share results with colleagues via a secure access-token link.
+          </div>
+        </li>
+      </ol>
+
+      <h2>Choosing the right workflow</h2>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Criterion</th>
+            <th>Batch Query</th>
+            <th>Detailed Report</th>
+            <th>Bioscientist Agent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Input</strong></td>
+            <td>Question + entity list (genes, drugs, diseases, etc.)</td>
+            <td>Question + gene list (&lt;30 genes)</td>
+            <td>Open-ended question or research task (+ optional files)</td>
+          </tr>
+          <tr>
+            <td><strong>Output</strong></td>
+            <td>Ranked table + scatter plot + CSV</td>
+            <td>PDF/DOCX multi-section report</td>
+            <td>PDF/DOCX white paper + figures + hypotheses + PRISMA</td>
+          </tr>
+          <tr>
+            <td><strong>Runtime</strong></td>
+            <td>A few minutes</td>
+            <td>30–90 minutes</td>
+            <td>1–2.5 hours</td>
+          </tr>
+          <tr>
+            <td><strong>Best for</strong></td>
+            <td>Screening many candidates against one question</td>
+            <td>Narrative causal analysis of a curated gene set</td>
+            <td>Systematic reviews, white papers, exploratory deep research</td>
+          </tr>
+          <tr>
+            <td><strong>Downloads</strong></td>
+            <td>CSV</td>
+            <td>PDF, DOCX</td>
+            <td>PDF, DOCX, figures, session log, RIS references</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>In this documentation</h2>
+      <ul class="page-index-list">
+        <li><a href="/formaticon-docs/getting-started.html"><span>Getting Started</span><small>Account creation, login, credits, and choosing a workflow</small></a></li>
+        <li><a href="/formaticon-docs/batch-query.html"><span>Batch Query</span><small>Form fields, focusing terms, results table, scatter plot</small></a></li>
+        <li><a href="/formaticon-docs/detailed-report.html"><span>Detailed Report</span><small>Gene list input, report structure, PDF/DOCX download</small></a></li>
+        <li><a href="/formaticon-docs/bioscientist-agent.html"><span>Bioscientist Agent</span><small>Conversational agent, task submission, phase tracker, downloads</small></a></li>
+        <li><a href="/formaticon-docs/reading-results.html"><span>Reading Your Results</span><small>Table columns, scatter axes, white paper sections, PRISMA, hypotheses</small></a></li>
+        <li><a href="/formaticon-docs/history-sharing-billing.html"><span>History, Sharing &amp; Billing</span><small>History pages, share links, credits, billing, NOT_ENOUGH_MONEY</small></a></li>
+        <li><a href="/formaticon-docs/faq.html"><span>FAQ</span><small>Common questions across all workflows</small></a></li>
+      </ul>
+
+    </div>
+  </main>
+</div>
+
+<footer class="docs-footer">
+  <p>© 2024 <a href="https://cellformatica.com" target="_blank" rel="noopener">Cellformatica</a> · <a href="https://formaticon.cellformatica.com" target="_blank" rel="noopener">Launch Formaticon</a></p>
+</footer>
+
+<script src="/formaticon-docs/js/nav.js"></script>
+</body>
+</html>

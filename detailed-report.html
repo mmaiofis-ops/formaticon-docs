@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to use the Formaticon Detailed Report — submit a focused gene list and receive a multi-section PDF/DOCX analytical report with figures and references.">
+  <title>Detailed Report — Formaticon Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/formaticon-docs/css/vars.css">
+  <link rel="stylesheet" href="/formaticon-docs/css/layout.css">
+  <link rel="stylesheet" href="/formaticon-docs/css/components.css">
+</head>
+<body class="docs-body">
+
+<div id="nav-overlay" class="nav-overlay"></div>
+
+<header class="docs-topbar">
+  <button class="nav-hamburger" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <a class="topbar-logo" href="/formaticon-docs/index.html">
+    <img src="/formaticon-docs/img/logo.svg" alt="Formaticon logo" onerror="this.style.display='none'">
+    <span class="topbar-logo-text">FORMATICON</span>
+  </a>
+  <span class="topbar-tagline">User Documentation</span>
+  <a class="topbar-app-link" href="https://formaticon.cellformatica.com" target="_blank" rel="noopener">Open App ↗</a>
+</header>
+
+<div class="docs-shell">
+  <nav class="docs-sidebar" id="sidebar" aria-label="Documentation navigation">
+    <span class="sidebar-section-label">Getting Started</span>
+    <a class="sidebar-link" href="/formaticon-docs/index.html"><span class="link-icon">🏠</span> Overview</a>
+    <a class="sidebar-link" href="/formaticon-docs/getting-started.html"><span class="link-icon">🚀</span> Getting Started</a>
+    <span class="sidebar-section-label">Workflows</span>
+    <a class="sidebar-link" href="/formaticon-docs/batch-query.html"><span class="link-icon">🔬</span> Batch Query</a>
+    <a class="sidebar-link" href="/formaticon-docs/detailed-report.html"><span class="link-icon">📄</span> Detailed Report</a>
+    <a class="sidebar-link" href="/formaticon-docs/bioscientist-agent.html"><span class="link-icon">🤖</span> Bioscientist Agent</a>
+    <span class="sidebar-section-label">Reference</span>
+    <a class="sidebar-link" href="/formaticon-docs/reading-results.html"><span class="link-icon">📊</span> Reading Your Results</a>
+    <a class="sidebar-link" href="/formaticon-docs/history-sharing-billing.html"><span class="link-icon">🗂️</span> History, Sharing &amp; Billing</a>
+    <a class="sidebar-link" href="/formaticon-docs/faq.html"><span class="link-icon">❓</span> FAQ</a>
+  </nav>
+
+  <main class="docs-content">
+    <div class="docs-content-inner">
+
+      <div class="page-meta">
+        <h1>Detailed Report</h1>
+        <p class="subtitle">Submit a focused gene list and receive a multi-section narrative analysis in PDF and DOCX format.</p>
+      </div>
+
+      <div class="callout callout--report">
+        <strong>Best for: curated gene panels needing narrative analysis</strong>
+        Use Detailed Report when you have a known gene or protein list (from a differential expression analysis, a published signature, or a panel of interest) and want a thorough written analysis — regulatory networks, disease associations, mechanistic insights, novel hypotheses, and formatted references — delivered as a downloadable document.
+      </div>
+
+      <h2>When to use Detailed Report</h2>
+      <p>The Detailed Report is ideal when you already have a small, curated list of genes and need a written narrative that explains how they relate to a specific disease or biological process. Typical use cases include:</p>
+      <ul>
+        <li>Interpreting a hit list from a differential expression or GWAS study</li>
+        <li>Generating a methods/background section for a grant or manuscript</li>
+        <li>Understanding the mechanistic relationships within a published gene signature</li>
+        <li>Generating a briefing document on a set of therapeutic targets for a drug discovery team</li>
+      </ul>
+
+      <h2>Filling in the form</h2>
+      <p>Navigate to <a href="https://formaticon.cellformatica.com/report-request" target="_blank" rel="noopener">formaticon.cellformatica.com/report-request</a> or click <strong>Create Detailed Report</strong> from the dashboard.</p>
+
+      <figure class="screenshot-frame">
+        <div class="screenshot-placeholder">Screenshot: Detailed Report input form</div>
+        <figcaption>The Detailed Report form showing the research question and gene list fields.</figcaption>
+      </figure>
+
+      <h3>Research question <span class="label-badge label-badge--required">Required</span></h3>
+      <p>State the biological or clinical question you want the report to address. The AI uses this to frame the analysis: every section is written in the context of your question.</p>
+      <p><strong>Good examples:</strong></p>
+      <ul>
+        <li>"What are the roles of these transcription factors in the regulation of epithelial-to-mesenchymal transition in breast cancer?"</li>
+        <li>"How do these kinases interact within the PI3K/AKT/mTOR pathway and what is their relevance to treatment resistance in glioblastoma?"</li>
+        <li>"What is the evidence for these five biomarkers as predictors of response to immune checkpoint inhibitors in melanoma?"</li>
+      </ul>
+      <p>Specificity matters — the more context you provide about the disease, tissue type, and angle of interest, the more focused and useful the report will be.</p>
+
+      <h3>Gene list <span class="label-badge label-badge--required">Required</span></h3>
+      <p>Enter your genes as a comma-separated list or upload a CSV file. Use HGNC-approved gene symbols (e.g. <code>EGFR, KRAS, TP53, PIK3CA, BRAF</code>).</p>
+
+      <div class="callout callout--warning">
+        <strong>Gene list limit: fewer than ~30 genes</strong>
+        The Detailed Report is optimised for focused panels. Lists with more than approximately 30 genes may exceed the report's depth budget. For larger lists, consider using <a href="/formaticon-docs/batch-query.html">Batch Query</a> to screen and prioritise first, then submit the top candidates as a Detailed Report.
+      </div>
+
+      <h4>CSV upload format</h4>
+      <p>Upload a CSV with gene symbols in the first column. A header row is optional. Example:</p>
+      <pre style="background:#f0f0f0;padding:12px;border-radius:6px;font-size:0.85rem;overflow:auto;">gene
+EGFR
+KRAS
+TP53
+PIK3CA
+BRAF</pre>
+
+      <h2>Running the report</h2>
+      <p>Click <strong>Submit</strong>. A confirmation modal shows your inputs and the estimated credit cost. Click <strong>Confirm</strong> to begin. Processing typically takes <strong>30 to 90 minutes</strong> depending on list size and system load.</p>
+      <p>You do not need to keep the browser tab open — the report is stored and will appear in your Detailed Report History when complete.</p>
+
+      <h2>What the report contains</h2>
+      <p>Each Detailed Report is structured as a formal scientific document. Typical sections include:</p>
+      <ul>
+        <li><strong>Introduction / Background</strong> — context for the biological question, disease area, and gene panel.</li>
+        <li><strong>Regulatory and functional analysis</strong> — for each gene or gene cluster, a narrative covering known molecular functions, pathway memberships, protein interactions, and published regulatory relationships.</li>
+        <li><strong>Disease associations</strong> — published evidence linking each gene to the condition specified in your question.</li>
+        <li><strong>Key uncertainties</strong> — gaps in current knowledge and areas of conflicting evidence.</li>
+        <li><strong>Novel hypotheses</strong> — mechanistically grounded, testable research directions generated by the AI.</li>
+        <li><strong>Conclusion</strong> — synthesis of the main findings and their implications.</li>
+        <li><strong>References</strong> — numbered citation list, sourced from PubMed and preprint servers.</li>
+      </ul>
+      <p>The PDF version includes formatted figures (pathway diagrams, charts). The DOCX version is editable and suitable for direct inclusion in manuscripts or grant applications.</p>
+
+      <h2>Downloading your report</h2>
+      <p>Go to <a href="https://formaticon.cellformatica.com/history-report" target="_blank" rel="noopener">Detailed Report History</a>. Find your completed report (status: <span class="status-pill status-pill--success">SUCCESS</span>) and click the download buttons to save the PDF and DOCX files.</p>
+
+      <h2>Sharing the report</h2>
+      <p>Click <strong>Share</strong> on the history page to generate a read-only access-token link. Recipients can view the report status and download files without needing a Formaticon account. See <a href="/formaticon-docs/history-sharing-billing.html">History, Sharing &amp; Billing</a> for details.</p>
+
+      <h2>Tips for better reports</h2>
+      <ul>
+        <li><strong>Provide disease and tissue context</strong> in your question — "in colorectal cancer" or "in CD8+ T cells" helps focus retrieval.</li>
+        <li><strong>Use clean gene symbols</strong> — avoid aliases, Ensembl IDs, or RefSeq accession numbers; stick to HGNC symbols.</li>
+        <li><strong>Group functionally related genes</strong> — a panel of kinases from one pathway produces a more coherent report than a mixed list of unrelated genes.</li>
+        <li><strong>For drug targets:</strong> include the target gene name rather than the drug name if you want mechanistic analysis.</li>
+      </ul>
+
+      <h2>Need more depth?</h2>
+      <p>For open-ended questions without a defined gene list, or when you need a full systematic review with PRISMA documentation and hypothesis generation, consider the <a href="/formaticon-docs/bioscientist-agent.html">Bioscientist Agent</a>. It runs a longer, more comprehensive pipeline and delivers a white paper with figures and a full reference archive.</p>
+
+    </div>
+  </main>
+</div>
+
+<footer class="docs-footer">
+  <p>© 2024 <a href="https://cellformatica.com" target="_blank" rel="noopener">Cellformatica</a> · <a href="https://formaticon.cellformatica.com" target="_blank" rel="noopener">Launch Formaticon</a></p>
+</footer>
+
+<script src="/formaticon-docs/js/nav.js"></script>
+</body>
+</html>

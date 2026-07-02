@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to interpret Formaticon results — understand the Batch Query table, Detailed Report sections, and Bioscientist Agent white paper including PRISMA, hypotheses, and citation format.">
+  <title>Reading Your Results — Formaticon Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/formaticon-docs/css/vars.css">
+  <link rel="stylesheet" href="/formaticon-docs/css/layout.css">
+  <link rel="stylesheet" href="/formaticon-docs/css/components.css">
+</head>
+<body class="docs-body">
+
+<div id="nav-overlay" class="nav-overlay"></div>
+
+<header class="docs-topbar">
+  <button class="nav-hamburger" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <a class="topbar-logo" href="/formaticon-docs/index.html">
+    <img src="/formaticon-docs/img/logo.svg" alt="Formaticon logo" onerror="this.style.display='none'">
+    <span class="topbar-logo-text">FORMATICON</span>
+  </a>
+  <span class="topbar-tagline">User Documentation</span>
+  <a class="topbar-app-link" href="https://formaticon.cellformatica.com" target="_blank" rel="noopener">Open App ↗</a>
+</header>
+
+<div class="docs-shell">
+  <nav class="docs-sidebar" id="sidebar" aria-label="Documentation navigation">
+    <span class="sidebar-section-label">Getting Started</span>
+    <a class="sidebar-link" href="/formaticon-docs/index.html"><span class="link-icon">🏠</span> Overview</a>
+    <a class="sidebar-link" href="/formaticon-docs/getting-started.html"><span class="link-icon">🚀</span> Getting Started</a>
+    <span class="sidebar-section-label">Workflows</span>
+    <a class="sidebar-link" href="/formaticon-docs/batch-query.html"><span class="link-icon">🔬</span> Batch Query</a>
+    <a class="sidebar-link" href="/formaticon-docs/detailed-report.html"><span class="link-icon">📄</span> Detailed Report</a>
+    <a class="sidebar-link" href="/formaticon-docs/bioscientist-agent.html"><span class="link-icon">🤖</span> Bioscientist Agent</a>
+    <span class="sidebar-section-label">Reference</span>
+    <a class="sidebar-link" href="/formaticon-docs/reading-results.html"><span class="link-icon">📊</span> Reading Your Results</a>
+    <a class="sidebar-link" href="/formaticon-docs/history-sharing-billing.html"><span class="link-icon">🗂️</span> History, Sharing &amp; Billing</a>
+    <a class="sidebar-link" href="/formaticon-docs/faq.html"><span class="link-icon">❓</span> FAQ</a>
+  </nav>
+
+  <main class="docs-content">
+    <div class="docs-content-inner">
+
+      <div class="page-meta">
+        <h1>Reading Your Results</h1>
+        <p class="subtitle">A guide to interpreting every output type — Batch Query table, Detailed Report, and Bioscientist Agent white paper.</p>
+      </div>
+
+      <h2>Batch Query results</h2>
+
+      <h3>The results table</h3>
+      <p>Each row in the Batch Query results table corresponds to one entity from your input list. The columns provide different angles on relevance and evidence quality:</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Column</th>
+            <th>What it means</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Entity name</strong></td>
+            <td>The gene symbol, drug name, disease term, or other identifier from your submitted list.</td>
+          </tr>
+          <tr>
+            <td><strong>Effect score</strong></td>
+            <td>A relevance score (0–1 range) indicating the strength of published evidence linking this entity to your research question. Higher scores indicate stronger, more consistent evidence. Entities with no evidence score near 0.</td>
+          </tr>
+          <tr>
+            <td><strong>Novelty score</strong></td>
+            <td>Indicates how underexplored the entity is relative to your question. A high novelty score combined with a high effect score marks a potentially important but understudied candidate — worth investigating further.</td>
+          </tr>
+          <tr>
+            <td><strong>Precision</strong></td>
+            <td>The fraction of retrieved papers that are genuinely relevant to your question for this entity. High precision means fewer false-positive citations.</td>
+          </tr>
+          <tr>
+            <td><strong>Recall</strong></td>
+            <td>Estimates how much of the available relevant literature was captured. High recall means comprehensive coverage.</td>
+          </tr>
+          <tr>
+            <td><strong>Answer / Evidence</strong></td>
+            <td>A brief AI-generated summary of the evidence found for this entity. Read this to understand <em>why</em> the entity received its score.</td>
+          </tr>
+          <tr>
+            <td><strong>References (PMIDs)</strong></td>
+            <td>PubMed IDs of the papers cited as evidence. Click any PMID to open the abstract directly on PubMed. Always verify key claims against the primary literature.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>The scatter plot</h3>
+      <p>The scatter plot visualises your results in a two-dimensional space. Use the <strong>X axis</strong> and <strong>Y axis</strong> dropdowns to select any two numeric columns. Common useful combinations:</p>
+      <ul>
+        <li><strong>Effect score (X) × Novelty score (Y)</strong> — top-right quadrant contains high-relevance, understudied candidates.</li>
+        <li><strong>Precision (X) × Recall (Y)</strong> — top-right quadrant contains entities with both comprehensive and accurate coverage.</li>
+        <li><strong>Effect score (X) × Your own fold-change data (Y)</strong> — if you uploaded a CSV and merged it, you can correlate AI relevance with your experimental data.</li>
+      </ul>
+      <p>Click or lasso-select points on the scatter to filter the table to those entities. Click an empty area to reset the filter.</p>
+
+      <h3>CSV export structure</h3>
+      <p>The downloaded CSV contains all table columns plus a <code>references</code> column with PMIDs as a semicolon-separated list. If you merged your own data, those columns appear at the right-hand side. The file uses UTF-8 encoding and comma delimiters.</p>
+
+      <hr class="section-divider">
+
+      <h2>Detailed Report</h2>
+
+      <h3>Document structure</h3>
+      <p>A Detailed Report is a formal scientific document. The PDF version is formatted with a title page, numbered sections, embedded figures, and a reference list. The DOCX version has the same content in an editable Word format.</p>
+      <p>Typical section order:</p>
+      <ol>
+        <li><strong>Introduction / Background</strong> — frames the research question, provides disease/pathway context, and defines the scope of the analysis.</li>
+        <li><strong>Regulatory and functional analysis</strong> — the core narrative. For each gene or functional cluster, covers molecular function, canonical pathway membership, known protein interactions, and published regulatory relationships. Evidence is cited throughout.</li>
+        <li><strong>Disease associations</strong> — published evidence linking each gene to the disease or condition you specified, including clinical data where available.</li>
+        <li><strong>Key uncertainties</strong> — honest gaps in the literature and areas of conflicting evidence.</li>
+        <li><strong>Novel hypotheses</strong> — mechanistically grounded, testable research directions generated by the AI.</li>
+        <li><strong>Conclusion</strong> — a synthesis paragraph drawing together the main themes and implications.</li>
+        <li><strong>References</strong> — numbered citations in the order of first appearance.</li>
+      </ol>
+
+      <h3>Figures in the report</h3>
+      <p>Two types of figures appear in Detailed Reports:</p>
+      <ul>
+        <li><strong>Quantitative figures</strong> — bar charts, scatter plots, heatmaps, or volcano plots generated from data retrieved during the analysis (e.g. expression databases, pathway enrichment). Each figure has a numbered caption explaining what is shown and what the key finding is.</li>
+        <li><strong>Schematic diagrams</strong> — conceptual diagrams illustrating pathway relationships, mechanistic models, or gene interaction networks. These are AI-generated illustrations, not reproductions of published figures.</li>
+      </ul>
+      <p>All figures are numbered sequentially (Figure 1, Figure 2, …) and referenced by number in the running text. Read the figure legend carefully for axis definitions, data sources, and interpretation notes.</p>
+
+      <hr class="section-divider">
+
+      <h2>Bioscientist Agent white paper</h2>
+
+      <h3>Pipeline phases and what they produce</h3>
+      <p>The agent runs a structured multi-phase pipeline. Understanding each phase helps you interpret what appears in the session log and why the archive contains each file.</p>
+
+      <table class="phase-table">
+        <thead>
+          <tr>
+            <th>Status / Phase</th>
+            <th>What the pipeline is doing</th>
+            <th>Key files produced</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="status-pill status-pill--initializing">INITIALIZING</span></td>
+            <td>Worker provisioned; research protocol loaded; session directory created.</td>
+            <td>Session directory with timestamp</td>
+          </tr>
+          <tr>
+            <td><span class="status-pill status-pill--pending">Phase 1</span> — Decomposition</td>
+            <td>The question is decomposed into structured sub-questions covering different facets (mechanistic, clinical, therapeutic, etc.).</td>
+            <td><code>00-decomposition.md</code></td>
+          </tr>
+          <tr>
+            <td><span class="status-pill status-pill--pending">Phase 2</span> — Literature retrieval</td>
+            <td>Systematic PubMed and preprint searches for each sub-question. PRISMA-S 2021 protocol written.</td>
+            <td><code>01-retrieval-*.md</code>, <code>10-prisma-search-protocol.md</code>, <code>20-prisma-flow.md</code></td>
+          </tr>
+          <tr>
+            <td><span class="status-pill status-pill--pending">Phase 3–5</span> — Synthesis &amp; reasoning</td>
+            <td>Evidence synthesised into sub-question answers. Full-text retrieved where needed. Data mining (pathway enrichment, expression databases) for quantitative figures.</td>
+            <td><code>50-answer-sq*.md</code>, <code>50-citation-registry.json</code></td>
+          </tr>
+          <tr>
+            <td><span class="status-pill status-pill--pending">Phase 6</span> — Hypothesis generation</td>
+            <td>Novel testable hypotheses generated via five reasoning modes and refined through an adversarial critique loop (≥3 rounds).</td>
+            <td><code>55-hypotheses.md</code></td>
+          </tr>
+          <tr>
+            <td><span class="status-pill status-pill--pending">Phases 7–9</span> — Report planning &amp; block writing</td>
+            <td>Report outline generated competitively (3 candidate plans, 3-judge panel, ≥3 review rounds). Each section written as a structured content block with embedded figures.</td>
+            <td><code>60-report-plan.md</code>, <code>70-block-*.md</code>, <code>figures/*.png</code></td>
+          </tr>
+          <tr>
+            <td><span class="status-pill status-pill--pending">Phases 10–11</span> — Synthesis &amp; rendering</td>
+            <td>Sections synthesised and revised. References resolved and compacted. Validation gate. PDF and DOCX rendered.</td>
+            <td><code>99-final-report.pdf</code>, <code>99-final-report.docx</code>, <code>99-references.ris</code></td>
+          </tr>
+          <tr>
+            <td><span class="status-pill status-pill--success">SUCCESS</span></td>
+            <td>All files complete. Archive uploaded. Download available.</td>
+            <td>Full archive (<code>.tar.gz</code> containing all above)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>PRISMA search protocol</h3>
+      <p>Every Bioscientist Agent white paper includes a <strong>PRISMA-S 2021 compliant search protocol</strong> (<code>10-prisma-search-protocol.md</code> in the archive). PRISMA-S is a reporting standard for literature searches in systematic reviews, requiring 16 structured items including the databases searched, search strategies used (verbatim queries), date ranges, and inclusion/exclusion criteria.</p>
+      <p>The PRISMA flow diagram (<code>20-prisma-flow.md</code>) shows the record counts at each stage: records identified → records screened → records included. This documentation makes Formaticon's search process transparent and reproducible — suitable for inclusion in the methods section of a manuscript.</p>
+
+      <h3>Hypotheses section</h3>
+      <p>The hypotheses document (<code>55-hypotheses.md</code> in the archive, also included in the white paper's "Novel Hypotheses and Research Directions" section) contains AI-generated, mechanistically grounded research proposals.</p>
+      <p>Each hypothesis is:</p>
+      <ul>
+        <li><strong>Grounded in evidence</strong> — derived from the retrieved literature, not invented without basis.</li>
+        <li><strong>Testable</strong> — phrased so that an experimental design could confirm or refute it.</li>
+        <li><strong>Scored by priority</strong> — each hypothesis carries a composite priority score on a <strong>7–21 scale</strong>: HIGH (17–21), MEDIUM (12–16), or LOW (7–11). This score reflects novelty, mechanistic strength, and experimental feasibility.</li>
+        <li><strong>Refined through adversarial review</strong> — before finalisation, hypotheses go through at least three rounds of independent critique by a fresh adversarial reviewer. Only hypotheses that survive this review appear in the final document.</li>
+      </ul>
+
+      <h3>Citation format in the white paper</h3>
+      <p>The white paper uses numbered citations in the format <code>[1]</code>, <code>[2]</code>, etc., appearing inline in the text at the point of claim. Each number maps to a full reference in the References section at the end of the document.</p>
+      <p>Internally, the pipeline uses content-bound citation handles (e.g. <code>[[PMID:37938563]]</code>) during writing, which are deterministically resolved to numbered citations before rendering. This prevents citation drift — a common problem in AI-generated documents where a number is assigned at writing time and silently maps to the wrong paper later. Every citation in a Formaticon white paper traces reliably to the exact paper cited.</p>
+
+      <h3>The session log</h3>
+      <p>The session log (<code>session-log-0.jsonl</code>, downloadable separately from the task result page) is the raw pipeline execution transcript. It contains every step the agent took: tool calls, search queries issued, papers retrieved, text generated, and error messages. It is not intended for casual reading but is invaluable for:</p>
+      <ul>
+        <li>Auditing which specific PubMed queries were run and how many papers were retrieved</li>
+        <li>Identifying the root cause of a FAILED run</li>
+        <li>Verifying that a specific paper was considered during the synthesis</li>
+        <li>Academic transparency: documenting AI methods for a publication</li>
+      </ul>
+
+      <h3>Quality signals — what a good run looks like</h3>
+      <p>A high-quality Bioscientist Agent run will have:</p>
+      <ul>
+        <li><strong>Zero open claims</strong> — every factual claim in the report is traceable to a cited source. The pipeline runs a claim audit before rendering and will not produce a final report with unverified claims.</li>
+        <li><strong>All figures present</strong> — at least one quantitative figure and at least one schematic diagram per major section. A report with zero figures is a pipeline failure.</li>
+        <li><strong>PRISMA files complete</strong> — <code>10-prisma-search-protocol.md</code>, <code>20-prisma-flow.md</code>, and <code>21-prisma-flow-summary.md</code> all present in the archive.</li>
+        <li><strong>Validated report</strong> — the pipeline runs a programmatic validation gate before rendering. If validation fails, the render is blocked and the run may be marked FAILED.</li>
+      </ul>
+      <p>If your run completed successfully, all of these conditions were met. If you notice a gap in the white paper (a section with no figures, or a claim without a citation), it is worth checking the session log for any logged warnings.</p>
+
+    </div>
+  </main>
+</div>
+
+<footer class="docs-footer">
+  <p>© 2024 <a href="https://cellformatica.com" target="_blank" rel="noopener">Cellformatica</a> · <a href="https://formaticon.cellformatica.com" target="_blank" rel="noopener">Launch Formaticon</a></p>
+</footer>
+
+<script src="/formaticon-docs/js/nav.js"></script>
+</body>
+</html>

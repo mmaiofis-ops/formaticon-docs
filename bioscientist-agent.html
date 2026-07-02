@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How to use the Formaticon Bioscientist Agent — submit an open-ended research question and receive a full PDF/DOCX white paper with figures, hypotheses, and PRISMA documentation.">
+  <title>Bioscientist Agent — Formaticon Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/formaticon-docs/css/vars.css">
+  <link rel="stylesheet" href="/formaticon-docs/css/layout.css">
+  <link rel="stylesheet" href="/formaticon-docs/css/components.css">
+</head>
+<body class="docs-body">
+
+<div id="nav-overlay" class="nav-overlay"></div>
+
+<header class="docs-topbar">
+  <button class="nav-hamburger" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <a class="topbar-logo" href="/formaticon-docs/index.html">
+    <img src="/formaticon-docs/img/logo.svg" alt="Formaticon logo" onerror="this.style.display='none'">
+    <span class="topbar-logo-text">FORMATICON</span>
+  </a>
+  <span class="topbar-tagline">User Documentation</span>
+  <a class="topbar-app-link" href="https://formaticon.cellformatica.com" target="_blank" rel="noopener">Open App ↗</a>
+</header>
+
+<div class="docs-shell">
+  <nav class="docs-sidebar" id="sidebar" aria-label="Documentation navigation">
+    <span class="sidebar-section-label">Getting Started</span>
+    <a class="sidebar-link" href="/formaticon-docs/index.html"><span class="link-icon">🏠</span> Overview</a>
+    <a class="sidebar-link" href="/formaticon-docs/getting-started.html"><span class="link-icon">🚀</span> Getting Started</a>
+    <span class="sidebar-section-label">Workflows</span>
+    <a class="sidebar-link" href="/formaticon-docs/batch-query.html"><span class="link-icon">🔬</span> Batch Query</a>
+    <a class="sidebar-link" href="/formaticon-docs/detailed-report.html"><span class="link-icon">📄</span> Detailed Report</a>
+    <a class="sidebar-link" href="/formaticon-docs/bioscientist-agent.html"><span class="link-icon">🤖</span> Bioscientist Agent</a>
+    <span class="sidebar-section-label">Reference</span>
+    <a class="sidebar-link" href="/formaticon-docs/reading-results.html"><span class="link-icon">📊</span> Reading Your Results</a>
+    <a class="sidebar-link" href="/formaticon-docs/history-sharing-billing.html"><span class="link-icon">🗂️</span> History, Sharing &amp; Billing</a>
+    <a class="sidebar-link" href="/formaticon-docs/faq.html"><span class="link-icon">❓</span> FAQ</a>
+  </nav>
+
+  <main class="docs-content">
+    <div class="docs-content-inner">
+
+      <div class="page-meta">
+        <h1>Bioscientist Agent</h1>
+        <p class="subtitle">Commission an autonomous AI scientist to research your question and deliver a publication-grade white paper.</p>
+      </div>
+
+      <div class="callout callout--agent">
+        <strong>Best for: deep research, white papers, and systematic reviews</strong>
+        The Bioscientist Agent runs a multi-phase pipeline — question decomposition, systematic literature retrieval, evidence synthesis, hypothesis generation, and report rendering — and delivers a complete PDF/DOCX white paper with quantitative figures, schematic diagrams, a PRISMA-compliant search protocol, and a full reference list. Typical runtime: 1–2.5 hours.
+      </div>
+
+      <h2>Two entry points</h2>
+      <p>You can start a Bioscientist Agent session in two ways, depending on whether you prefer a conversational or form-based interface.</p>
+
+      <h3>Conversational Agent (home page)</h3>
+      <p>Visit <a href="https://formaticon.cellformatica.com" target="_blank" rel="noopener">formaticon.cellformatica.com</a> (the home page). The Bioscientist Agent chat interface lets you type your research question directly and watch the pipeline's progress in real time. You can see individual phases completing, token-by-token output, and a phase tracker as the agent works through decomposition, retrieval, synthesis, and report generation.</p>
+
+      <figure class="screenshot-frame">
+        <div class="screenshot-placeholder">Screenshot: Bioscientist Agent conversational chat interface</div>
+        <figcaption>The conversational agent interface showing an active research session with real-time output.</figcaption>
+      </figure>
+
+      <h3>Form-based Task submission</h3>
+      <p>Visit <a href="https://formaticon.cellformatica.com/bioscientist-request" target="_blank" rel="noopener">formaticon.cellformatica.com/bioscientist-request</a> or click <strong>Create Bioscientist Task</strong> from the dashboard. This form-based approach is useful when you want to attach files, set a task name for easy retrieval later, or configure advanced options before submitting.</p>
+
+      <h2>Filling in the task form</h2>
+
+      <h3>Task name <span class="label-badge label-badge--required">Required</span></h3>
+      <p>Give your task a short descriptive name (e.g. "KRAS therapy resistance — lung cancer 2024"). This appears in your Bioscientist Task History and makes it easy to find your results later.</p>
+
+      <h3>Research question <span class="label-badge label-badge--required">Required</span></h3>
+      <p>Describe your research question or task in detail. The more context you provide, the more accurately the agent can calibrate its search strategy, analytical depth, and report structure.</p>
+
+      <h4>Writing a good research question</h4>
+      <p>The agent works best with questions that include:</p>
+      <ul>
+        <li><strong>A clear biological or clinical focus</strong> — name the disease, pathway, gene, organism, or process.</li>
+        <li><strong>The angle of interest</strong> — mechanistic, clinical, epidemiological, therapeutic, or comparative.</li>
+        <li><strong>Any constraints or preferences</strong> — "focus on human studies", "include data from GEO datasets", "prioritise papers from the last five years".</li>
+        <li><strong>The desired output format</strong> — "produce a 3,000-word white paper", "include at least two quantitative figures", "generate novel testable hypotheses".</li>
+      </ul>
+
+      <p><strong>Example of a well-phrased task:</strong></p>
+      <div class="callout">
+        "Write a comprehensive white paper on the role of ferroptosis in treatment-resistant triple-negative breast cancer (TNBC). Focus on mechanistic links between GPX4, SLC7A11, and lipid peroxidation, published clinical associations, and potential therapeutic strategies. Include quantitative figures summarising key datasets where available. Generate at least three novel, testable hypotheses. Target length: approximately 4,000 words."
+      </div>
+
+      <h3>Attaching files <span class="label-badge label-badge--optional">Optional</span></h3>
+      <p>You can attach reference files that the agent should use as context during its research. Supported formats include:</p>
+      <ul>
+        <li><strong>PDF</strong> — papers, preprints, or documents the agent should read and reference</li>
+        <li><strong>CSV / TSV</strong> — gene lists, expression data, or metadata tables</li>
+        <li><strong>Images</strong> — pathway diagrams, figures, or annotated screenshots to include as context</li>
+      </ul>
+      <p>Attached files are downloaded into the agent's working environment and made available as reference material. The agent may cite them, extract data from them, or use them to guide its analysis — but it always supplements attachments with its own systematic literature retrieval.</p>
+
+      <h3>Advanced options</h3>
+      <p>Expand the <strong>Advanced</strong> section to access power-user settings:</p>
+      <ul>
+        <li><strong>API key override</strong> — provide your own Anthropic API key. The agent will use this key for all AI calls in this session, and the cost will be billed to your Anthropic account rather than your Formaticon credits. Useful for heavy users with existing API agreements.</li>
+        <li><strong>Model override</strong> — specify a Claude model name (e.g. <code>claude-opus-4-8</code>) to use a specific version rather than the platform default. Leave blank to use the platform's recommended model.</li>
+      </ul>
+
+      <h2>Running the task</h2>
+      <p>Click <strong>Submit</strong>. A confirmation modal shows the task name, question summary, and estimated credit cost. Click <strong>Confirm</strong> to begin.</p>
+
+      <h2>Monitoring progress</h2>
+
+      <figure class="screenshot-frame">
+        <div class="screenshot-placeholder">Screenshot: Bioscientist Agent phase tracker</div>
+        <figcaption>The phase tracker showing research phases as they complete in real time.</figcaption>
+      </figure>
+
+      <p>The status of your task is visible on the task detail page (accessible from <a href="https://formaticon.cellformatica.com/history-bioscientist" target="_blank" rel="noopener">Bioscientist Task History</a>). Statuses progress as follows:</p>
+
+      <table class="phase-table">
+        <thead>
+          <tr>
+            <th>Status</th>
+            <th>What is happening</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="status-pill status-pill--initializing">INITIALIZING</span></td>
+            <td>The pipeline is starting up: a Fargate worker is provisioned, the environment is configured, and the agent reads its research protocol.</td>
+          </tr>
+          <tr>
+            <td><span class="status-pill status-pill--pending">PENDING</span></td>
+            <td>Active research is in progress. The pipeline is executing its phases: question decomposition → PubMed/preprint retrieval → evidence synthesis → data mining → hypothesis generation → report planning → block writing → critique → rendering.</td>
+          </tr>
+          <tr>
+            <td><span class="status-pill status-pill--success">SUCCESS</span></td>
+            <td>The white paper is complete. The output archive is available for download.</td>
+          </tr>
+          <tr>
+            <td><span class="status-pill status-pill--failed">FAILED</span></td>
+            <td>An error stopped the pipeline. Download the session log to see error details. Most failures are recoverable by resubmitting the task.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>In the conversational interface, you can also watch individual phases complete in real time, with token-by-token text streaming and file-creation notifications as figures and documents are produced.</p>
+
+      <h2>Runtime expectations</h2>
+      <p>A typical Bioscientist Agent task takes <strong>1 to 2.5 hours</strong>. Factors that affect runtime:</p>
+      <ul>
+        <li><strong>Question complexity</strong> — multi-part questions or requests for multiple independent topics run longer.</li>
+        <li><strong>Requested length</strong> — specifying a target word count (e.g. 5,000 words) extends the synthesis and critique phases.</li>
+        <li><strong>Reference count</strong> — requesting a large number of references increases retrieval time.</li>
+        <li><strong>System load</strong> — peak usage periods may add queue time.</li>
+      </ul>
+      <p>The hard maximum runtime is 8 hours. If a task does not complete within this window, it is marked as FAILED and you can resubmit.</p>
+
+      <h2>When the task completes</h2>
+
+      <figure class="screenshot-frame">
+        <div class="screenshot-placeholder">Screenshot: Bioscientist task result page showing download buttons</div>
+        <figcaption>The task result page showing status, charge, and download options for the output archive and session log.</figcaption>
+      </figure>
+
+      <p>When status changes to <span class="status-pill status-pill--success">SUCCESS</span>, the following downloads become available:</p>
+      <ul>
+        <li><strong>Download Output</strong> — the primary archive. Contains the final PDF white paper, DOCX version, all generated figures (PNG), a PRISMA-compliant search protocol, a hypotheses document, and a RIS reference file.</li>
+        <li><strong>Download Session Log</strong> — the raw pipeline execution transcript (JSONL format). Useful for auditing which papers were retrieved, understanding the agent's reasoning, or debugging a partial run.</li>
+        <li><strong>Download Input Attachments</strong> — any files you attached when submitting the task, available for reference.</li>
+      </ul>
+
+      <h2>Sharing your results</h2>
+      <p>Click <strong>Share</strong> on the task result page. This generates a URL with an access token. Anyone with the link can view the task status, download the output archive, and download the session log — without needing a Formaticon account. See <a href="/formaticon-docs/history-sharing-billing.html">History, Sharing &amp; Billing</a> for details.</p>
+
+      <h2>Next steps</h2>
+      <p>For a detailed explanation of what each section of the white paper contains — PRISMA protocol, hypotheses, citation format, and quality signals — see <a href="/formaticon-docs/reading-results.html">Reading Your Results</a>.</p>
+
+    </div>
+  </main>
+</div>
+
+<footer class="docs-footer">
+  <p>© 2024 <a href="https://cellformatica.com" target="_blank" rel="noopener">Cellformatica</a> · <a href="https://formaticon.cellformatica.com" target="_blank" rel="noopener">Launch Formaticon</a></p>
+</footer>
+
+<script src="/formaticon-docs/js/nav.js"></script>
+</body>
+</html>

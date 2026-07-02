@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get started with Formaticon — create an account, understand credits, and choose the right research workflow for your needs.">
+  <title>Getting Started — Formaticon Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/formaticon-docs/css/vars.css">
+  <link rel="stylesheet" href="/formaticon-docs/css/layout.css">
+  <link rel="stylesheet" href="/formaticon-docs/css/components.css">
+</head>
+<body class="docs-body">
+
+<div id="nav-overlay" class="nav-overlay"></div>
+
+<header class="docs-topbar">
+  <button class="nav-hamburger" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <a class="topbar-logo" href="/formaticon-docs/index.html">
+    <img src="/formaticon-docs/img/logo.svg" alt="Formaticon logo" onerror="this.style.display='none'">
+    <span class="topbar-logo-text">FORMATICON</span>
+  </a>
+  <span class="topbar-tagline">User Documentation</span>
+  <a class="topbar-app-link" href="https://formaticon.cellformatica.com" target="_blank" rel="noopener">Open App ↗</a>
+</header>
+
+<div class="docs-shell">
+  <nav class="docs-sidebar" id="sidebar" aria-label="Documentation navigation">
+    <span class="sidebar-section-label">Getting Started</span>
+    <a class="sidebar-link" href="/formaticon-docs/index.html"><span class="link-icon">🏠</span> Overview</a>
+    <a class="sidebar-link" href="/formaticon-docs/getting-started.html"><span class="link-icon">🚀</span> Getting Started</a>
+    <span class="sidebar-section-label">Workflows</span>
+    <a class="sidebar-link" href="/formaticon-docs/batch-query.html"><span class="link-icon">🔬</span> Batch Query</a>
+    <a class="sidebar-link" href="/formaticon-docs/detailed-report.html"><span class="link-icon">📄</span> Detailed Report</a>
+    <a class="sidebar-link" href="/formaticon-docs/bioscientist-agent.html"><span class="link-icon">🤖</span> Bioscientist Agent</a>
+    <span class="sidebar-section-label">Reference</span>
+    <a class="sidebar-link" href="/formaticon-docs/reading-results.html"><span class="link-icon">📊</span> Reading Your Results</a>
+    <a class="sidebar-link" href="/formaticon-docs/history-sharing-billing.html"><span class="link-icon">🗂️</span> History, Sharing &amp; Billing</a>
+    <a class="sidebar-link" href="/formaticon-docs/faq.html"><span class="link-icon">❓</span> FAQ</a>
+  </nav>
+
+  <main class="docs-content">
+    <div class="docs-content-inner">
+
+      <div class="page-meta">
+        <h1>Getting Started</h1>
+        <p class="subtitle">Create your account, add credits, and run your first analysis.</p>
+      </div>
+
+      <h2>Creating an account</h2>
+      <p>Go to <a href="https://formaticon.cellformatica.com/register" target="_blank" rel="noopener">formaticon.cellformatica.com/register</a> to sign up. The registration form requires four fields:</p>
+      <ul>
+        <li><strong>Name</strong> — your full name as it will appear on your account.</li>
+        <li><strong>Email</strong> — used for login and any notifications. Must be unique.</li>
+        <li><strong>Phone</strong> — optional for contact purposes.</li>
+        <li><strong>Password</strong> — choose a secure password of at least 8 characters.</li>
+      </ul>
+      <p>After submitting, you are automatically logged in and redirected to the dashboard.</p>
+
+      <h3>Logging in</h3>
+      <p>Visit <a href="https://formaticon.cellformatica.com/login" target="_blank" rel="noopener">formaticon.cellformatica.com/login</a> and enter your registered email and password. Your session persists in a secure browser cookie — you will remain logged in across browser restarts until you log out manually from the profile menu.</p>
+
+      <h3>Password reset</h3>
+      <p>If you forget your password, use the <strong>Forgot password</strong> link on the login page. Enter your registered email address; you will receive a reset link. Click it and enter a new password. If the email does not arrive within a few minutes, check your spam folder or contact support via the <a href="https://cellformatica.com" target="_blank" rel="noopener">Cellformatica website</a>.</p>
+
+      <hr class="section-divider">
+
+      <h2>Understanding credits</h2>
+      <p>Formaticon uses a pay-per-use credit system. Each research run deducts credits based on the AI compute consumed — primarily Anthropic Claude API tokens and any auxiliary API calls during the analysis. Credits are deducted only on <em>successful</em> completion; failed runs are not charged.</p>
+
+      <h3>Checking your balance</h3>
+      <p>Your current credit balance is shown in the top-right corner of every page once you are logged in. The balance updates immediately after each run completes.</p>
+
+      <h3>Adding credits</h3>
+      <ol class="steps">
+        <li>
+          <div class="step-content">
+            <strong>Open your Profile</strong>
+            Click your name or avatar in the top-right corner and select <strong>Profile</strong>.
+          </div>
+        </li>
+        <li>
+          <div class="step-content">
+            <strong>Navigate to Billing</strong>
+            On the Profile page, find the billing section. Click <strong>Add credits</strong> or <strong>Purchase credits</strong>.
+          </div>
+        </li>
+        <li>
+          <div class="step-content">
+            <strong>Complete payment via Stripe</strong>
+            You are redirected to a secure Stripe checkout page. Enter your card details and confirm. Credits are added to your account immediately on payment success.
+          </div>
+        </li>
+      </ol>
+
+      <div class="callout callout--warning">
+        <strong>Insufficient credits</strong>
+        If you try to submit a run without enough credits, you will see a <code>NOT_ENOUGH_MONEY</code> error. Add credits before resubmitting. See <a href="/formaticon-docs/history-sharing-billing.html">History, Sharing &amp; Billing</a> for details.
+      </div>
+
+      <hr class="section-divider">
+
+      <h2>Choosing the right workflow</h2>
+      <p>Formaticon offers three research workflows. The table below helps you decide which to use based on your input and the type of output you need.</p>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Criterion</th>
+            <th>Batch Query</th>
+            <th>Detailed Report</th>
+            <th>Bioscientist Agent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Your input</strong></td>
+            <td>A question + a list of entities (genes, drugs, diseases, cell types)</td>
+            <td>A question + a focused gene list (up to ~30)</td>
+            <td>Any open-ended research question or task description</td>
+          </tr>
+          <tr>
+            <td><strong>Output type</strong></td>
+            <td>Interactive ranked table + scatter plot + CSV download</td>
+            <td>Multi-section PDF/DOCX report</td>
+            <td>Full PDF/DOCX white paper with figures, hypotheses, PRISMA protocol, and references</td>
+          </tr>
+          <tr>
+            <td><strong>Typical runtime</strong></td>
+            <td>A few minutes</td>
+            <td>30–90 minutes</td>
+            <td>1–2.5 hours</td>
+          </tr>
+          <tr>
+            <td><strong>Best for</strong></td>
+            <td>Candidate screening, gene prioritisation, drug repurposing</td>
+            <td>Pathway/regulatory analysis of a known gene panel</td>
+            <td>Systematic literature review, white paper, hypothesis generation, open research questions</td>
+          </tr>
+          <tr>
+            <td><strong>Downloads</strong></td>
+            <td>CSV</td>
+            <td>PDF, DOCX</td>
+            <td>PDF, DOCX, all figures, session log, RIS reference file</td>
+          </tr>
+          <tr>
+            <td><strong>Sharing</strong></td>
+            <td>Read-only access-token link</td>
+            <td>Read-only access-token link</td>
+            <td>Read-only access-token link</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="section-divider">
+
+      <h2>Tips for your first run</h2>
+      <div class="callout callout--tip">
+        <strong>Start with a Batch Query</strong>
+        If you are new to Formaticon, a Batch Query is the quickest way to see results. Submit a focused scientific question with 10–20 gene symbols and you will have an interactive table in minutes.
+      </div>
+      <ul>
+        <li><strong>Be specific:</strong> vague questions like "what do these genes do?" produce less useful results than "which of these kinases are upregulated in triple-negative breast cancer and associated with poor prognosis?"</li>
+        <li><strong>Use standard identifiers:</strong> for genes, use HGNC-approved symbols (e.g. <code>TP53</code>, <code>BRCA1</code>). For drugs, use INN names. For diseases, use established terminology (e.g. MeSH terms).</li>
+        <li><strong>For the Bioscientist Agent, include context:</strong> mention the organism, disease context, data type, or desired output format in your task description. The more specific, the better the pipeline can tailor its search strategy.</li>
+        <li><strong>Check your balance before submitting:</strong> the form shows a cost estimate before you confirm. Make sure you have enough credits.</li>
+      </ul>
+
+      <h2>Next steps</h2>
+      <ul class="page-index-list">
+        <li><a href="/formaticon-docs/batch-query.html"><span>Batch Query</span><small>Step-by-step form walkthrough and results guide</small></a></li>
+        <li><a href="/formaticon-docs/detailed-report.html"><span>Detailed Report</span><small>Gene list input and multi-section report structure</small></a></li>
+        <li><a href="/formaticon-docs/bioscientist-agent.html"><span>Bioscientist Agent</span><small>Conversational AI and autonomous research tasks</small></a></li>
+      </ul>
+
+    </div>
+  </main>
+</div>
+
+<footer class="docs-footer">
+  <p>© 2024 <a href="https://cellformatica.com" target="_blank" rel="noopener">Cellformatica</a> · <a href="https://formaticon.cellformatica.com" target="_blank" rel="noopener">Launch Formaticon</a></p>
+</footer>
+
+<script src="/formaticon-docs/js/nav.js"></script>
+</body>
+</html>

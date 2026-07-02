@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formaticon history pages, sharing results via access tokens, and billing — credits, adding funds via Stripe, and understanding the NOT_ENOUGH_MONEY error.">
+  <title>History, Sharing &amp; Billing — Formaticon Docs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/formaticon-docs/css/vars.css">
+  <link rel="stylesheet" href="/formaticon-docs/css/layout.css">
+  <link rel="stylesheet" href="/formaticon-docs/css/components.css">
+</head>
+<body class="docs-body">
+
+<div id="nav-overlay" class="nav-overlay"></div>
+
+<header class="docs-topbar">
+  <button class="nav-hamburger" id="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
+  <a class="topbar-logo" href="/formaticon-docs/index.html">
+    <img src="/formaticon-docs/img/logo.svg" alt="Formaticon logo" onerror="this.style.display='none'">
+    <span class="topbar-logo-text">FORMATICON</span>
+  </a>
+  <span class="topbar-tagline">User Documentation</span>
+  <a class="topbar-app-link" href="https://formaticon.cellformatica.com" target="_blank" rel="noopener">Open App ↗</a>
+</header>
+
+<div class="docs-shell">
+  <nav class="docs-sidebar" id="sidebar" aria-label="Documentation navigation">
+    <span class="sidebar-section-label">Getting Started</span>
+    <a class="sidebar-link" href="/formaticon-docs/index.html"><span class="link-icon">🏠</span> Overview</a>
+    <a class="sidebar-link" href="/formaticon-docs/getting-started.html"><span class="link-icon">🚀</span> Getting Started</a>
+    <span class="sidebar-section-label">Workflows</span>
+    <a class="sidebar-link" href="/formaticon-docs/batch-query.html"><span class="link-icon">🔬</span> Batch Query</a>
+    <a class="sidebar-link" href="/formaticon-docs/detailed-report.html"><span class="link-icon">📄</span> Detailed Report</a>
+    <a class="sidebar-link" href="/formaticon-docs/bioscientist-agent.html"><span class="link-icon">🤖</span> Bioscientist Agent</a>
+    <span class="sidebar-section-label">Reference</span>
+    <a class="sidebar-link" href="/formaticon-docs/reading-results.html"><span class="link-icon">📊</span> Reading Your Results</a>
+    <a class="sidebar-link" href="/formaticon-docs/history-sharing-billing.html"><span class="link-icon">🗂️</span> History, Sharing &amp; Billing</a>
+    <a class="sidebar-link" href="/formaticon-docs/faq.html"><span class="link-icon">❓</span> FAQ</a>
+  </nav>
+
+  <main class="docs-content">
+    <div class="docs-content-inner">
+
+      <div class="page-meta">
+        <h1>History, Sharing &amp; Billing</h1>
+        <p class="subtitle">Find past runs, share results with colleagues, and manage your credits.</p>
+      </div>
+
+      <h2>History pages</h2>
+      <p>Formaticon maintains separate history pages for each workflow type. All three are accessible from the top navigation menu.</p>
+
+      <figure class="screenshot-frame">
+        <div class="screenshot-placeholder">Screenshot: Bioscientist Task History page</div>
+        <figcaption>The Bioscientist Task History page showing past tasks with their status, date, cost, and action buttons.</figcaption>
+      </figure>
+
+      <h3>Batch Query History</h3>
+      <p>Visit <a href="https://formaticon.cellformatica.com/history-query" target="_blank" rel="noopener">Batch Query History</a> to see all your past batch queries. Each row shows:</p>
+      <ul>
+        <li><strong>Question</strong> — the research question you submitted.</li>
+        <li><strong>Status</strong> — <span class="status-pill status-pill--success">SUCCESS</span>, <span class="status-pill status-pill--pending">PENDING</span>, or <span class="status-pill status-pill--failed">FAILED</span>.</li>
+        <li><strong>Date</strong> — when the query was submitted.</li>
+        <li><strong>Cost</strong> — credits deducted on completion.</li>
+        <li><strong>Actions</strong> — View Result, Run Again, Share.</li>
+      </ul>
+      <p>Click <strong>View Result</strong> to open the interactive table and scatter plot. Click <strong>Run Again</strong> to open the query form pre-filled with your previous inputs.</p>
+
+      <h3>Detailed Report History</h3>
+      <p>Visit <a href="https://formaticon.cellformatica.com/history-report" target="_blank" rel="noopener">Detailed Report History</a> to see your generated reports. Columns include report name, status, date, cost, and download buttons for PDF and DOCX files. Completed reports remain available for download indefinitely.</p>
+
+      <h3>Bioscientist Task History</h3>
+      <p>Visit <a href="https://formaticon.cellformatica.com/history-bioscientist" target="_blank" rel="noopener">Bioscientist Task History</a> to see all your agent tasks. Each row shows the task name, question summary, status badge, creation date, and charged amount. Click a row or the task name to open the task detail page, where you can download the output archive, input attachments, and session log.</p>
+
+      <p>All history pages support <strong>pagination</strong> — use the navigation controls at the bottom to browse older runs. Results are sorted by date, newest first.</p>
+
+      <hr class="section-divider">
+
+      <h2>Sharing results</h2>
+
+      <figure class="screenshot-frame">
+        <div class="screenshot-placeholder">Screenshot: Share modal with generated access-token link</div>
+        <figcaption>The share modal showing the generated URL with an access token, ready to copy.</figcaption>
+      </figure>
+
+      <h3>Generating a share link</h3>
+      <p>On any result page or history row, click the <strong>Share</strong> button. A modal appears with a URL containing a unique access token. Click <strong>Copy</strong> to copy the URL to your clipboard. Share this URL with anyone you want to give access to.</p>
+
+      <h3>What shared viewers can see</h3>
+      <p>Anyone with a share link can:</p>
+      <ul>
+        <li>View the result (table, scatter plot, report status)</li>
+        <li>Download files (CSV, PDF, DOCX, output archive, session log)</li>
+      </ul>
+      <p>Shared viewers cannot:</p>
+      <ul>
+        <li>Re-run the query or task</li>
+        <li>Generate additional share links</li>
+        <li>Access other parts of your account</li>
+        <li>See your credit balance or billing information</li>
+      </ul>
+      <p>Share links do not expire automatically. To revoke access, contact support — there is currently no self-service revoke button.</p>
+
+      <hr class="section-divider">
+
+      <h2>Billing and credits</h2>
+
+      <h3>How the credits system works</h3>
+      <p>Formaticon uses a pre-purchased credit system. Credits are consumed when a run completes successfully — you are not charged at the time of submission, and a failed run does not deduct credits.</p>
+      <p>The cost of each run depends on the AI compute used: primarily the number of Claude API tokens consumed during the research and report-generation pipeline. More complex questions, longer requested documents, and larger gene lists will cost more. The submission form always shows a cost estimate before you confirm — you can cancel if the estimate is higher than expected.</p>
+
+      <h3>Viewing your balance</h3>
+      <p>Your credit balance is visible in the top-right corner of every page once you are logged in. The balance updates in real time after each completed run.</p>
+
+      <figure class="screenshot-frame">
+        <div class="screenshot-placeholder">Screenshot: Profile page showing credit balance and billing link</div>
+        <figcaption>The Profile page showing the current credit balance and the link to add more credits via Stripe.</figcaption>
+      </figure>
+
+      <h3>Adding credits</h3>
+      <ol class="steps">
+        <li>
+          <div class="step-content">
+            <strong>Go to your Profile</strong>
+            Click your name or avatar in the top-right corner and select <strong>Profile</strong>.
+          </div>
+        </li>
+        <li>
+          <div class="step-content">
+            <strong>Click "Add credits" or "Purchase credits"</strong>
+            This opens a Stripe-hosted checkout page.
+          </div>
+        </li>
+        <li>
+          <div class="step-content">
+            <strong>Complete the Stripe payment</strong>
+            Enter your card details and confirm. Credits are added to your account immediately on payment success and reflected in the top-right balance.
+          </div>
+        </li>
+      </ol>
+      <p>Stripe is a PCI-compliant payment processor. Formaticon does not store your card details.</p>
+
+      <h3>The NOT_ENOUGH_MONEY error</h3>
+      <p>If you submit a run and the estimated cost exceeds your current credit balance, the request is rejected with a <code>NOT_ENOUGH_MONEY</code> error before any processing begins. To resolve this:</p>
+      <ol>
+        <li>Note the estimated cost shown in the confirmation modal.</li>
+        <li>Go to Profile → Billing and add enough credits to cover the estimated cost.</li>
+        <li>Return to your workflow and resubmit.</li>
+      </ol>
+
+      <h3>When are credits deducted?</h3>
+      <p>Credits are deducted only when a run reaches <span class="status-pill status-pill--success">SUCCESS</span> status. If a run fails at any stage, no credits are charged and your balance is unchanged. For the Bioscientist Agent, the final cost (shown on the task detail page as "Charged: $X.XX") may differ slightly from the estimate because the actual number of AI tokens consumed can vary.</p>
+
+      <h3>Refunds</h3>
+      <p>If you were charged for a run that produced incorrect or incomplete results, please contact Cellformatica support via the <a href="https://cellformatica.com" target="_blank" rel="noopener">Cellformatica website</a>. Refunds are evaluated on a case-by-case basis.</p>
+
+    </div>
+  </main>
+</div>
+
+<footer class="docs-footer">
+  <p>© 2024 <a href="https://cellformatica.com" target="_blank" rel="noopener">Cellformatica</a> · <a href="https://formaticon.cellformatica.com" target="_blank" rel="noopener">Launch Formaticon</a></p>
+</footer>
+
+<script src="/formaticon-docs/js/nav.js"></script>
+</body>
+</html>
